@@ -1,0 +1,9 @@
+.alice-carousel__dots {
+    margin: 0 auto;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn-item{
+    display: none;
+}
+
