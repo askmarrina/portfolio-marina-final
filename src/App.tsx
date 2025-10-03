@@ -8,10 +8,13 @@ import {Works} from "./layout/sections/works/Works.tsx";
 import {Testimony} from "./layout/sections/testimony/Testimony.tsx";
 import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from './layout/footer/Footer.tsx'
+import {Particle} from "./components/particle/Particle.tsx";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn.tsx";
 
 function App() {
   return (
    <div>
+       <Particle/>
        <GlobalStyles/>
        <Header/>
        <Main/>
@@ -21,6 +24,7 @@ function App() {
        <Testimony/>
        <Contacts/>
        <Footer/>
+       <GoTopBtn/>
    </div>
   )
 }

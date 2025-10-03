@@ -6,21 +6,42 @@ import {Button} from "../../../components/Button.tsx";
 import photo1 from '../../../assets/images/Photo-1.png';
 import { Container } from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
+import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
+
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id={'home'}>
             <Container>
                 <FlexWrapper align={'center'} justify={'space-between'}>
                     <MainWrapper>
                         <span>Hello,</span>
-                        <h2>I'm <span>Daniella Adams</span></h2>
+                        {/*<h2>I'm <span>Marina K</span></h2>*/}
+                        <h2>
+                            <Typewriter
+                                options={{
+                                    strings: ['I am Marina K.'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            />
+                        </h2>
                         <p>I’m a Graphics Designer,Designing has become my everyday affair. masting styles,grids cant be less interesting.</p>
                         <Button primary type={'button'}>Download CV</Button>
                     </MainWrapper>
-                    <PhotoWrapper>
-                        <Photo src={photo1} alt=''/>
-                    </PhotoWrapper>
+                    <Tilt className="parallax-effect-img"
+                          tiltMaxAngleX={40}
+                          tiltMaxAngleY={40}
+                          perspective={800}
+                          transitionSpeed={1500}
+                          scale={1.1}
+                          gyroscope={true}>
+                        <PhotoWrapper>
+                            <Photo src={photo1} alt=''/>
+                        </PhotoWrapper>
+                    </Tilt>
+
 
                 </FlexWrapper>
             </Container>
@@ -53,6 +74,9 @@ const MainWrapper = styled.div`
     max-width: 480px;
     width: 100%;
     text-align: left;
+    position: relative;
+    top: 120px;
+    
     
     span {
         font-family: 'Nunito Sans', sans-serif;
@@ -106,6 +130,7 @@ const MainWrapper = styled.div`
 `
 const PhotoWrapper = styled.div`
     position: relative;
+    top:120px;
     &::before {
         content: '';
         display: inline-block;
@@ -129,6 +154,7 @@ const PhotoWrapper = styled.div`
         @media ${Theme.media.mobile} {
             width: 300px;
             height: 376px;
+            
         }
     }
     // @media ${Theme.media.tablet} {
@@ -138,6 +164,10 @@ const PhotoWrapper = styled.div`
     //     margin: 0 auto;
     //    
     // }
+    @media ${Theme.media.mobile} {
+        top: 75px;
+
+    }
 `
 
 export const Photo = styled.img`

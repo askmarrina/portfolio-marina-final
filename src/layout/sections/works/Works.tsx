@@ -11,32 +11,38 @@ import sauce from '../../../assets/images/sauce.webp'
 import {Work} from "../works/work/Work.tsx"
 import {Theme} from "../../../styles/Theme.tsx";
 import {Container} from "../../../components/Container.tsx";
+import { Fade } from "react-awesome-reveal";
 
 
 export const Works = () => {
     return (
-        <StyledWorks>
+        <StyledWorks id={'latest-works'}>
             <Container>
                 <SectionTitle>Latest works</SectionTitle>
                 <FlexWrapper justify={'space-around'} align={'center'} wrap={'wrap'} gap={'60px 45px'}>
-                    <Work src={sauce}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
-                    <Work src={magazine}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
-                    <Work src={orange}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
-                    <Work src={plant}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
-                    <Work src={cola}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
-                    <Work src={book}
-                          title={'Project title'}
-                          text={'UI, Art drection'}/>
+                    <Fade cascade={true}
+                          damping={0.2}
+                    >
+                        <Work src={sauce}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                        <Work src={magazine}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                        <Work src={orange}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                        <Work src={plant}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                        <Work src={cola}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                        <Work src={book}
+                              title={'Project title'}
+                              text={'UI, Art drection'}/>
+                    </Fade>
+
 
                 </FlexWrapper>
             </Container>
@@ -48,5 +54,5 @@ export const Works = () => {
 const StyledWorks = styled.section`
     background-color: ${Theme.colors.primaryBg};
     margin: 145px 0 195px;
-    
+    position: relative;
 `

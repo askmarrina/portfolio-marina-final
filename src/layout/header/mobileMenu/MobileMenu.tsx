@@ -3,7 +3,28 @@ import styled, {css} from 'styled-components';
 import {Theme} from "../../../styles/Theme.tsx";
 import {useState} from "react";
 
-
+const items = [
+    {
+        title: 'Home',
+        href: 'home'
+    },
+    {
+        title: 'About',
+        href: 'about'
+    },
+    {
+        title: 'Latest Works',
+        href: 'latest-works'
+    },
+    {
+        title: 'Testimonials',
+        href: 'testimony'
+    },
+    {
+        title: 'Contact',
+        href: 'contact'
+    }
+]
 
 
 export const MobileMenu = () => {
@@ -16,11 +37,13 @@ export const MobileMenu = () => {
             </BurgerButton>
             <MobileMenuPopup isOpen={menuIsOpen} onClick={ () => {setmenuIsOpen(false) }}>
                 <ul>
-                    <li><Link>Home</Link></li>
-                    <li><Link>About</Link></li>
-                    <li><Link>Latest Works</Link></li>
-                    <li><Link>Testimonials</Link></li>
-                    <li><Link>Contact</Link></li>
+                    {items.map((item, index) => {
+                        return (
+                            <MenuItem key={index}>
+                                <Link href={`#${item.href}`}>{item.title}</Link>
+                            </MenuItem>
+                        );
+                    })}
                 </ul>
             </MobileMenuPopup>
 
@@ -34,6 +57,9 @@ const StyledMobileMenu = styled.nav`
     @media ${Theme.media.tablet} {
         display: block;
     }
+`
+const MenuItem = styled.li`
+
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`

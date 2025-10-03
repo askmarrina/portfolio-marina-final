@@ -26,11 +26,13 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     background-color: ${Theme.colors.tertiaryBg};
-    
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 30px;
-    
+    position: fixed;
+    width: 100%;
+    z-index: 9999999999;
     
     @media ${Theme.media.tablet} {
         width: 100%;

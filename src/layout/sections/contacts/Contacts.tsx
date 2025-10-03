@@ -5,20 +5,46 @@ import {Button} from "../../../components/Button.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
+import emailjs from '@emailjs/browser';
+import {useRef} from "react";
 
 export const Contacts = () => {
+
+    const form = useRef<ElementRef<'form'>>(null);
+
+    const sendEmail = (e: any) => {
+        e.preventDefault();
+
+        if(!form.current) {
+            return
+        }
+
+        emailjs
+            .sendForm('service_tqcz69c', 'template_gsv62sr', form.current, {
+                publicKey: '0JIYr8LxXj73aKO9t',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+        e.target.reset();
+    };
     return (
-        <StyledContacts>
+        <StyledContacts id={'contact'}>
             <Container>
                 <SectionTitle>Get in Touch</SectionTitle>
                 <FlexWrapper align={'flex-start'} justify={'space-around'} wrap={'wrap'}>
-                    <StyledForm>
+                    <StyledForm ref={form} onSubmit={sendEmail}>
                         <FieldGroup>
                             <Label>Your Email Address</Label>
-                            <Field placeholder={'something@website.com'}/>
+                            <Field required placeholder={'something@website.com'} name={'email'}/>
                             <Label>Subject</Label>
-                            <Field placeholder={'Question about your article'}/>
-                            <Field placeholder={'Your message starts with…'} as={'textarea'}/>
+                            <Field required placeholder={'Question about your article'} name={'subject'} />
+                            <Field required placeholder={'Your message starts with…'} as={'textarea'} name={'message'}/>
                         </FieldGroup>
                         <Button primary type={'submit'}>Send</Button>
                     </StyledForm>
@@ -37,7 +63,7 @@ export const Contacts = () => {
 
 const StyledContacts = styled.section`
     margin-bottom: 160px;
-    
+    position: relative;
     ${Button} {
         @media (max-width: 1085px) {
             margin: 0 auto 50px;

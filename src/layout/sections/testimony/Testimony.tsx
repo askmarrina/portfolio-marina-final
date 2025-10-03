@@ -9,7 +9,7 @@ import {Container} from "../../../components/Container.tsx";
 
 export const Testimony = () => {
     return (
-        <StyledTestimony>
+        <StyledTestimony id={'testimony'}>
             <Container>
                 <FlexWrapper align={'center'} direction={'column'}>
                     <Slider/>
@@ -27,4 +27,5 @@ const StyledTestimony = styled.section`
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+    position: relative;
 `

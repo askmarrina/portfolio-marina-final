@@ -80,7 +80,7 @@ const StyledFooter = styled.footer`
     background-color: #FB3F5C;
     min-height: 232px;
     color: white;
-    
+    position: relative;
     
 `
 

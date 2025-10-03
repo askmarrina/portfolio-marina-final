@@ -9,7 +9,7 @@ import {ProgressBarContainer} from "../../../components/progressBar/ProgressBarC
 
 export const About = () => {
     return (
-        <StyledAbout>
+        <StyledAbout id={'about'}>
             <Container>
                 <FlexWrapper align={'center'} justify={'space-around'} wrap={'wrap'} gap={'50px'}>
                     <PhotoWrapper>
@@ -36,7 +36,7 @@ export const About = () => {
 
 const StyledAbout = styled.section`
    margin-bottom: 215px;
-    
+    position: relative;
 `
 
 const PhotoWrapper = styled.div`

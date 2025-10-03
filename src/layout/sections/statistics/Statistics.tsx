@@ -27,7 +27,7 @@ export const Statistics = () => {
 };
 
 const StyledStatistics = styled.section`
-    
+    position: relative;
     display: flex;
     justify-content: space-around;
     gap: 50px;
