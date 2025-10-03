@@ -6,7 +6,7 @@ import {FlexWrapper} from "../FlexWrapper.tsx";
 import {Slide} from "./slide/Slide.tsx";
 import client from '../../assets/images/client.png'
 import './../../styles/slider.css'
-import {Theme} from "../../styles/Theme.tsx";
+
 
 type SliderPropsType = {
     src: string,
