@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import photo from '../../../assets/images/Photo.webp';
+import photo from '../../../assets/images/871b9dfb09c6eb67c1811a876d7bc079.jpg';
 import {Button} from "../../../components/Button.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
@@ -37,6 +37,7 @@ export const About = () => {
 const StyledAbout = styled.section`
    margin-bottom: 215px;
     position: relative;
+    margin-top: 180px;
 `
 
 const PhotoWrapper = styled.div`

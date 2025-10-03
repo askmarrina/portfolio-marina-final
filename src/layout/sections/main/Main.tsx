@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Button} from "../../../components/Button.tsx";
 // import photo from '../../../assets/images/Photo.webp';
-import photo1 from '../../../assets/images/Photo-1.png';
+import photo1 from '../../../assets/images/871b9dfb09c6eb67c1811a876d7bc079.jpg';
 import { Container } from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
 import Typewriter from 'typewriter-effect';
@@ -52,9 +52,10 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     min-height: calc(100vh - 100px);
-    padding: 100px 0;
+    padding: 70px 0;
     display: flex;
     align-items: center;
+    
    
     ${FlexWrapper} {
         @media ${Theme.media.tablet} {
