@@ -93,7 +93,7 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     right: 0;
     bottom: 0;
     z-index: 99999;
-    background-color: ${Theme.colors.secondaryBg};
+    background-color: ${Theme.colors.tertiaryBg};
     
     display: none;
     
@@ -119,11 +119,11 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
 export const Link = styled.a`
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 54px;
     position: relative;
     padding: 10px;
     z-index: 0;
-    color: ${Theme.colors.font};
+    color: ${Theme.colors.linkColor};
     &:hover {
         &::before {
             height: 6px;
