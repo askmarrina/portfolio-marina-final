@@ -6,7 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
 import emailjs from '@emailjs/browser';
-import {useRef} from "react";
+import {type ElementRef, useRef} from "react";
 
 export const Contacts = () => {
 
