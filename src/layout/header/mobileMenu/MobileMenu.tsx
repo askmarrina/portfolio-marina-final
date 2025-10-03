@@ -94,6 +94,7 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     bottom: 0;
     z-index: 99999;
     background-color: ${Theme.colors.secondaryBg};
+    
     display: none;
     
     ${props => props.isOpen && css<{isOpen: boolean}>`
@@ -101,6 +102,7 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
         justify-content: center;
         align-items: center;
         
+        gap: 30px;
     `}
     ul {
         display: flex;
@@ -121,6 +123,7 @@ export const Link = styled.a`
     position: relative;
     padding: 10px;
     z-index: 0;
+    color: ${Theme.colors.font};
     &:hover {
         &::before {
             height: 6px;
@@ -139,4 +142,6 @@ export const Link = styled.a`
         right: 0;
         z-index: -1;
     }
+
+    
 `
